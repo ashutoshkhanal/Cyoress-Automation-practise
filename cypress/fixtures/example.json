@@ -1,0 +1,12 @@
+{
+  "name": "Neevan",
+  "gender":"Male",
+  "products":["Blackberry","iphone X"],
+  "username":"admin",
+  "password":"admin123",
+  "role": "Admin",
+  "search" : "ca",
+  "veggie" : ["Cauliflower","Carrot","Capsicum"],
+  "country": "Australia"
+
+}

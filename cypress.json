@@ -1,0 +1,11 @@
+{
+  "reporter": "mochawesome",
+  "env": {
+    "url": "https://rahulshettyacademy.com/seleniumPractise/",
+    "web": "https://react-shopping-cart-67954.firebaseapp.com/"
+    
+  },
+  "projectId": "j1ayeq",
+  "chromeWebSecurity": false
+ 
+}
