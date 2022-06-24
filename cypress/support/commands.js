@@ -89,6 +89,13 @@ Cypress.Commands.add('skills', (skillset) => {
 
         })
     })
+    Cypress.Commands.add('searchresult', (values) => 
+    {  
+        cy.get('input[type="text"]').type(values)
+          cy.get('button[type="submit"]').click()
+      
+   })
+
 
     Cypress.Commands.add(
         'iframe',
