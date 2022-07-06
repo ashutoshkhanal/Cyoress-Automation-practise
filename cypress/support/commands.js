@@ -11,6 +11,32 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+// Cypress.Commands.add('login', (email, password) => {  
+       
+//         cy.visit('http://103.94.159.179:98/login/') 
+//         cy.get("#username").type(email)  
+
+//         cy.get("#password").type(password)
+
+//         cy.get('.chakra-button').click()
+// })
+Cypress.Commands.add('login', (email, password) => {  
+
+       
+
+    cy.visit('http://103.94.159.179:98/login/')
+
+    cy.get("#username").type(email)  
+
+
+
+    cy.get("#password").type(password)
+
+
+
+    cy.get('.chakra-button').click()
+
+})
 
 Cypress.Commands.add('capabilities', (select) => { 
     cy.get('#navbarNav > ul > li:nth-child(2) > ul').invoke('show')
