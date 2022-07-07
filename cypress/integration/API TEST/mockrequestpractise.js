@@ -10,10 +10,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
         cy.visit('https://flamboyant-allen-00cf47.netlify.app/login')
         cy.intercept('GET','https://613715dc8700c50017ef57b0.mockapi.io/api/listnames',(req) =>
         {
-            req.url = 'https://613715dc8700c50017ef57b0.mockapi.io/api/list'
+            req.url = 'https://613715dc8700c50017ef57b0.mockapi.io/api/tasks'
             req.continue((res) =>
             {
-                expect(res.statusCode).to.equal(404)
+                expect(res.statusCode).to.equal(200)
 
             })
 

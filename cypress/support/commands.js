@@ -146,3 +146,15 @@ Cypress.Commands.add('skills', (skillset) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('LoginApi', () => {
+    cy.request('POST','https://rahulshettyacademy.com/api/ecom/auth/login',
+    {
+        "userEmail": "ashutoshkhanal11@gmail.com",
+        "userPassword": "Manchester10#"
+    }).then(function(response)
+    {
+        expect(response.status).to.eq(200)
+        Cypress.env('token',response.body.token)
+    })
+
+})
