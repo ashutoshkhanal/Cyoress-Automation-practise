@@ -158,3 +158,16 @@ Cypress.Commands.add('LoginApi', () => {
     })
 
 })
+
+Cypress.Commands.add('BOMLoginApi', () => {
+    cy.request('POST','http://103.94.159.167/BOM/api/login',
+    {
+        "username": "ASHUTOSH",
+        "password": "Manchester10#"
+    }).then(function(response)
+    {
+        expect(response.status).to.eq(200)
+        Cypress.env('token',response.body.token)
+    })
+
+})

@@ -9,7 +9,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     {
         cy.LoginApi().then(function()
         {
-            cy.visit('https://rahulshettyacademy.com/client',
+            cy.visit('https://rahulshettyacademy.com/client/dashboard/dash',
             {
                 onLoad:function(window)
                 {
