@@ -21,7 +21,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
         })
         cy.get('.card-body b').eq(1).then(function(ele)
         {
-            ele.text()
+            productName = ele.text()
         })
         cy.get(".btn.w-10.rounded").eq(1).click()
         cy.get('[routerlink*="/dashboard/cart"]').click()
@@ -40,7 +40,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
         cy.wait(2000)
         cy.get('.order-summary button').click()
 
-        cy.readFile(Cypress.config("fileServerFolder")+"cypress/downloads/order-invoice_ashutoshkhanal11.csv")
+        cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_ashutoshkhanal11.csv")
         .then(async(text) =>
         {
             const csv = await neatCSV(text)
