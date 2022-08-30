@@ -171,3 +171,19 @@ Cypress.Commands.add('BOMLoginApi', () => {
     })
 
 })
+
+Cypress.Commands.add('signin', (accountnumber, password) => {
+
+        cy.get('#account_account_number').type(accountnumber)
+        cy.get('#account_password').type(password)
+        cy.get('button[type="submit"]').click()
+
+})
+
+Cypress.Commands.add('invoicemenu', (tableaction) => {
+
+    cy.contains('Invoices').click()    
+    cy.get('tr td form button').eq(tableaction).click()
+
+})
+
