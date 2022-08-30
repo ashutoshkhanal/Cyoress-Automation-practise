@@ -38,7 +38,8 @@ describe('Navajo Application',function()
       
     it('Should verify if the action button is clickable',function()
     {
-        cy.invoicemenu(1)
+        cy.invoicemenu(0)
+        cy.get('.invoice-payment div[class="invoice-paid"]').should('include.text','PAID')
         cy.get("td[class='text-end']").then((paidamount)=>
         {
             const amount = paidamount.text()
@@ -50,6 +51,7 @@ describe('Navajo Application',function()
             const total = totalamt.text()
             expect(total).to.equals(amt)
         }) 
+
     })
 
     it('Should verify if the action button is clickable',function()

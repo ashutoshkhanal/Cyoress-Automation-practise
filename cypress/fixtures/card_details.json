@@ -1,0 +1,13 @@
+{
+    "AccountNumber":"123123123",
+    "PinNumber":"123789",
+    "cardNumber":"4242424242424242",
+    "expiryDate":"12/22",
+    "verificationCode":"1114",
+    "Addressline1":"1330",
+    "Addressline2":"1330",
+    "State":"DE",
+    "PostalCode":"19704",
+    "City": "Denver"
+
+}
