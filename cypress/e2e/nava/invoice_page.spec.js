@@ -4,6 +4,7 @@ describe('Navajo Application',function()
     var amt;
     var cardNumber1 = 'xxxx-xxxx-xxxx-4444';
     var cardNumber2 = 'xxxx-xxxx-xxxx-4242';
+    var invoiceamt;
 
     before(()=>
     {
@@ -36,8 +37,9 @@ describe('Navajo Application',function()
 
     })
       
-    it('Should verify if the action button is clickable',function()
+    it('Should verify if the action button [View] is clickable',function()
     {
+        cy.contains('Invoices').click()
         cy.invoicemenu(0)
         cy.get('.invoice-payment div[class="invoice-paid"]').should('include.text','PAID')
         cy.get("td[class='text-end']").then((paidamount)=>
@@ -54,15 +56,35 @@ describe('Navajo Application',function()
 
     })
 
-    it('Should verify if the action button is clickable',function()
+    it('Should verify if the action button [Pay] is clickable',function()
     {
+        cy.contains('Invoices').click()
         cy.invoicemenu(1)
         cy.get("a[class='btn btn-primary']").click()
         cy.get('input[id="payment_amount"]').clear().type(fixtureData.PayingAmount)
     })
 
+    // it('Should verify if the amount is equal in the total amount and invoice table ',function()
+    // {
+    //     cy.contains('Invoices').click()   
+    //     cy.get('.invoice-amount-status  .invoice-amount').eq(0).then(function(inAmt)
+    //     {
+    //         const amountinvoice = inAmt.text()
+    //         invoiceamt = amountinvoice
+    //     })
+        
+    //     cy.invoicemenu(0)
+    //     cy.get('.invoice-total-value').then(function(totalamt)
+    //     {
+    //         const total = totalamt.text()
+    //         expect(total).to.equals(invoiceamt)
+    //     }) 
+
+    // })
+
     it('Should verify if we change the card number for payment',function()
     {
+        cy.contains('Invoices').click()
         cy.invoicemenu(1)
         cy.get("a[class='btn btn-primary']").click()
         cy.get("button[data-bs-target$='#changeCard']").click()
@@ -75,5 +97,7 @@ describe('Navajo Application',function()
         })
         cy.get('.payment-card-info').should('include.text',cardNumber1)
     })
+
+
    
 })
